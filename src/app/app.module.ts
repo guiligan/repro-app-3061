@@ -9,9 +9,8 @@ import { AppComponent } from './app.component';
         AppComponent,
     ],
     imports: [
-        BrowserModule.withServerTransition({ appId: 'repro-app-3061' }),
         AppRoutingModule,
-        // BModule,
+        BrowserModule.withServerTransition({ appId: 'repro-app-3061' }),
     ],
     providers: [],
     bootstrap: [AppComponent]

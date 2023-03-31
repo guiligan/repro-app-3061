@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
     imports: [
         ARoutingModule,
         CommonModule,
-        MatInputModule,
+        MatInputModule, // <-- if imported
     ],
     exports: [],
     declarations: [AComponent],
