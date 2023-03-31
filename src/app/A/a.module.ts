@@ -2,23 +2,14 @@ import { NgModule } from '@angular/core';
 
 import { AComponent } from './a.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ARoutingModule } from './a-routing.module';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
     imports: [
+        ARoutingModule,
         CommonModule,
-        RouterModule.forChild([
-            {
-                path: '',
-                component: AComponent,
-                children: [
-                    {
-                        path: '',
-                        loadChildren: () => import('../B/b.module').then(m => m.BModule)
-                    }
-                ]
-            }
-        ])
+        MatInputModule,
     ],
     exports: [],
     declarations: [AComponent],

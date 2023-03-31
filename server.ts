@@ -33,20 +33,9 @@ export function app(): express.Express {
 
     // All regular routes use the Universal engine
     server.get('*', (req, res) => {
-        const xForwardedHost: any = req.headers['x-forwarded-host'] || '';
-        const xHostPort: string = (typeof xForwardedHost === 'object') ? ''.concat(xForwardedHost) : xForwardedHost;
-        const xHost: string = xHostPort.split(':')[0] || '';
-        req.baseUrl = `/${xHost}`;
-        if (req.url === '/null') {
-            req.url = '/';
-        }
-
-        req.url = `${xHost}${req.url}`;
         res.render(indexHtml, {
             req, providers: [
                 {provide: APP_BASE_HREF, useValue: req.baseUrl},
-                {provide: 'X_FORWARDED_HOST', useValue: xForwardedHost},
-                {provide: 'X_HOST', useValue: xHost},
             ]
         });
     });

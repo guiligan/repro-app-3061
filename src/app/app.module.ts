@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BModule } from './B/b.module';
 
 @NgModule({
     declarations: [
@@ -12,7 +11,7 @@ import { BModule } from './B/b.module';
     imports: [
         BrowserModule.withServerTransition({ appId: 'repro-app-3061' }),
         AppRoutingModule,
-        BModule,
+        // BModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

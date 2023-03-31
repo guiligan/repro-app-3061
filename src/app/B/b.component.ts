@@ -19,7 +19,6 @@ export class BComponent implements OnInit {
         this.isServer = isPlatformServer(platformId);
     }
     ngOnInit() {
-        console.log('B ON INIT');
         if (this.isServer) {
             this.state.set(BComponent.STATE_KEY, '<state key set in server>');
         } else if (this.isBrowser) {

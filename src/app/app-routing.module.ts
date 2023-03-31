@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { BComponent } from './B/b.component';
 
 const routes: Routes = [
     {
@@ -11,10 +9,6 @@ const routes: Routes = [
     {
         path: 'b-module',
         loadChildren: () => import('./B/b.module').then(m => m.BModule)
-    },
-    {
-        path: 'b-component',
-        component: BComponent,
     },
     {
         path: '',
